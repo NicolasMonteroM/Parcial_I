@@ -1,9 +1,17 @@
 package model;
 
-public class CompareBreed {
+import java.util.Comparator;
+
+public class CompareBreed implements Comparator<Dog>{
 
 	public CompareBreed() {
-		// TODO Auto-generated constructor stub
+
+	}
+
+	@Override
+	public int compare(Dog o1, Dog o2) {
+		
+		return o1.getBreed().compareTo(o2.getBreed());
 	}
 
 }

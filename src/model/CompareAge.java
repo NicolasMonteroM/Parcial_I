@@ -1,9 +1,17 @@
 package model;
 
-public class CompareAge {
+import java.util.Comparator;
+
+public class CompareAge implements Comparator<Dog> {
 
 	public CompareAge() {
-		// TODO Auto-generated constructor stub
+
+	}
+
+	@Override
+	public int compare(Dog o1, Dog o2) {
+
+		return o1.getAge() - o2.getAge();
 	}
 
 }

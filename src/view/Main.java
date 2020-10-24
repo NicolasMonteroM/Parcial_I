@@ -1,10 +1,11 @@
 package view;
 
+import controller.Controller;
 import processing.core.PApplet;
 
-public class Main extends PApplet{
-	
+public class Main extends PApplet {
 
+	Controller controller;
 	PApplet app;
 
 	public static void main(String[] args) {
@@ -14,28 +15,31 @@ public class Main extends PApplet{
 
 	@Override
 	public void settings() {
-		
-		size(600,600);
-		
-		
+
+		size(600, 600);
+
 	}
-	
+
 	@Override
 	public void setup() {
-		
-		//controller = new Controller(this);
-		
+
+		controller = new Controller(this);
+		controller.loadInfo();
+
 	}
-	
+
 	@Override
 	public void draw() {
-		
-		background(50);
-		
+
+		background(255);
+		controller.drawController(this);
+
 	}
-	
+
 	@Override
-	public void mousePressed() {
+	public void keyPressed() {
+		
+		controller.keyboardController(key);
 
 	}
 }
